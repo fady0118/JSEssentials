@@ -6,31 +6,31 @@ function addBook(){
     const authorName = document.getElementById("authorName").value;
     const bookDescription = document.getElementById("bookDescription").value;
     const pagesNumber = parseInt(document.getElementById("pagesNumber").value);
-    if(bookName && authorName && bookDescription && pagesNumber){
+    if(bookName && authorName && bookDescription && !isNaN(pagesNumber) && pagesNumber>0){
         const book = {
-            name:bookName,
-            author:authorName,
-            description:bookDescription,
-            pagesnumber:pagesNumber
+            name: bookName,
+            author: authorName,
+            description: bookDescription,
+            pagesNumber: pagesNumber
         };
         books.push(book); // add book to the books array 
-        showbook();
+        displayBook();
         clearInputs();
     }else{
         alert('Please fill in all fields correctly.');
     }
 
 }
-function showbook() {
+function displayBook() {
     // grab the last book
     const lastBook = books.slice(-1);
     const last_index = books.length - 1;
     // create the book new array
-    const Divbook = lastBook.map((book)=>`<h1>book Number: ${last_index+1}</h1>
+    const Divbook = lastBook.map((book)=>`<h2>book Number: ${last_index+1}</h2>
     <p><strong>Book Name: </strong>${book.name}</p>
     <p><strong>Book Author: </strong>${book.author}</p>
     <p><strong>Book Description: </strong>${book.description}</p>
-    <p><strong>Book pagesnumber</strong>${book.pagesnumber}</p>
+    <p><strong>Book pagesnumber</strong>${book.pagesNumber}</p>
     `)
     // create the book element in the html and append to the container
     const newDiv = document.createElement('div');
@@ -45,16 +45,20 @@ function showbook() {
     document.getElementById(`divbook${last_index}`).appendChild(delete_button);
 }
 function deletebook(index){
-    // remove from the books array
-    books.splice(index,1);
-    // remove the element from DOM
-    document.getElementById(`divbook${index}`).remove();
-    updateIndex();
+    // Confirmation dialog
+    if(confirm(`Are you sure you want to delete book ${index+1}?`)){
+        // remove from the books array
+        books.splice(index,1);
+        // remove the element from DOM
+        document.getElementById(`divbook${index}`).remove();
+        updateIndex();  
+    }
 }
+
 function updateIndex(){
     const bookslist = document.querySelectorAll("#Bookcontainer .books");
     const bookslist_buttons = document.querySelectorAll(".books button");
-    const bookheaderindex = document.querySelectorAll(".books h1");
+    const bookheaderindex = document.querySelectorAll(".books h2");
     let i=0,j=0,h=1;
     bookslist.forEach(book=>{
         book.id=`divbook${i++}`;
