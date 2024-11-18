@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Management System</title>
+    <style>
+        #container{
+            display: inline-block;
+            position: relative;
+            width:85vw;
+            left: 50%;
+            transform: translate(-50%,0);
+        }
+        #Bookcontainer{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            height: auto;
+        }
+        .books{
+            display: inline-block;
+            border: thin solid black;
+            border-radius: 20px;
+            box-sizing:border-box;
+            padding: 1rem;
+            width: 268px;
+            margin: 1vw;
+        }
+    </style>
+</head>
+<body>
+    <h1>Book Management System</h1>
+    <label for="bookName">Book Name:</label><br>
+    <input type="text" id="bookName"><br><br>
+    <label for="authorName">Author Name:</label><br>
+    <textarea id="authorName" rows="4"></textarea><br><br>
+    <label for="bookDescription">Book Description</label><br>
+    <textarea id="bookDescription" rows="4"></textarea><br><br>
+    <label for="pagesNumber">No. of Pages Time</label><br>
+    <input type="number" id="pagesNumber"><br><br>
+    <button onclick="addBook()">Add Book</button>
+ 
+    <h2>books</h2>
+    <div id="Bookcontainer">
+
+    </div>
+
+    <script src="./book_system.js"></script>
+</body>
+</html>
