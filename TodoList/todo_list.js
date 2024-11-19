@@ -3,6 +3,7 @@ const taskInput = document.getElementById("taskInput");
 const addTaskBtn = document.getElementById("addTaskBtn");
 const taskList = document.getElementById("taskList");
 const clearCompletedBtn = document.getElementById("clearCompletedBtn");
+const clearAllBtn = document.getElementById("clearAll");
 // tasks array that will contain the array objects
 let tasks = [];
 // called with add task button, adds a new task object to the array and calls the displaytasks() function
@@ -38,6 +39,11 @@ function clearCompletedTasks() {
     tasks = tasks.filter(task => !task.completed);
     displayTasks();
 }
-// event listeners for the addtask and clearcompleted buttons that pass a reference to the corresponding function
+function ClearAllTasks(){
+    tasks = [];
+    displayTasks();
+}
+// event listeners for the addtask, clearcompleted and clearAll buttons that pass a reference to the corresponding function
 addTaskBtn.addEventListener("click", addTask);
 clearCompletedBtn.addEventListener("click", clearCompletedTasks);
+clearAllBtn.addEventListener("click",ClearAllTasks)
