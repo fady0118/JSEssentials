@@ -14,15 +14,21 @@ function addTask() {
         taskInput.value = "";
         displayTasks();
     }
+    else{
+        alert("please enter a vaild task");
+        taskInput.value = "";
+    }
 }
 // called regularly to update the list items
 function displayTasks(){
     // clear the display
     taskList.innerHTML = "";
-    // create the list element form the array using forEach loop with a checkbox
+    // create the list element from the array using forEach loop with a checkbox
     // and addEventListener on checkbox state change for each task with its index that calls the toggle function 
     tasks.forEach((task, index)=>{
         const li = document.createElement("li");
+        li.id=`task(${index})`;
+        li.classList.add("checkbox-wrapper-11");
         li.innerHTML = `<input type="checkbox" id="task-${index}" ${task.completed ? "checked" : ""}>
         <label for="task-${index}">${task.text}</label>`;
         li.querySelector("input").addEventListener("change", () => toggleTask(index));
