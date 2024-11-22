@@ -1,6 +1,7 @@
 //drop lists for user input
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('countries+cities.json')
+    const JsonURL='https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/refs/heads/master/json/countries%2Bcities.json';
+    fetch(JsonURL)
         .then(response => response.json())
         .then(data => {
             const select = document.getElementById('country');
