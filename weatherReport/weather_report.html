@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather Report</title>
+</head>
+<body>
+   <h1>Weather Report</h1>
+
+  <form id="weatherForm" class="form_1">
+    <h3>Use <a href="https://www.iso.org/obp/ui/#search" target="_blank">ISO-3166</a> names</h3>
+    <label for="country">Enter Country:</label>
+    <select id="country" name="country" required>
+        <option value="">Select a country</option>
+    </select>
+    <label for="city">Enter City:</label>
+    <input type="text" id="city" name="city">
+    
+    <button type="submit">Get Weather</button>
+  </form>
+
+  <div id="weatherInfo"></div>
+<script src="./weather_report.js"></script>
+</body>
+</html>
