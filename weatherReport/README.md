@@ -1,4 +1,4 @@
-### Weather Report
+# Weather Report
 ## Description
 This is a web app designed to output the weather of a user-chosen city using the openweather.org api
 ## Instructions
