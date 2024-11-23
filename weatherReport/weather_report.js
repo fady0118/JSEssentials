@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // drop list for cities
 document.getElementById('country').addEventListener('change',()=>{
     console.log("country event")
+
     fetch(JsonURL)
     .then(response=>response.json())
     .then(data=>{
@@ -39,6 +40,7 @@ document.getElementById('country').addEventListener('change',()=>{
 // get the cities list based on the country id from the json file
 function getCitiesByCountryId(data, countryId){
     const country = data.find(item=>item.iso2 === countryId);
+    console.log(country);
     return country? country.cities:[];
 }
 // get city data after selecting the city
@@ -64,11 +66,26 @@ function getCityData(data, countryISO2,cityName){
     }
     return null;
 }
+function getLongLatFromCountry(data){
+    const countryISO2 = document.getElementById('country').value;
+    const countryData = data.find(item=>item.iso2 === countryISO2);
+    longitude = countryData.longitude;
+    latitude = countryData.latitude;
+}
 
 function showweatherDetails(event) {
     event.preventDefault();
     // Open weather personal API Code
     const apiKey = 'YOUR_API_KEY'; // Replace 'YOUR_API_KEY' with your actual API key from https://openweathermap.org
+    if(longitude === "" && latitude === ""){
+        fetch(JsonURL)
+        .then(response=>response.json())
+        .then(data=>{
+            getLongLatFromCountry(data);
+        })
+        
+    }
+    console.log(`longitude:${longitude} - latitude:${latitude}`);
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
     // fetch the data from the API
     fetch(apiUrl)
@@ -76,9 +93,13 @@ function showweatherDetails(event) {
     .then(data => {
         // display the weather data
     const weatherInfo = document.getElementById('weatherInfo');
+    console.log(data);
     weatherInfo.innerHTML = `<h2>Weather in ${data.name}</h2>
                             <p>Temperature: ${data.main.temp} &#8451;</p>
                             <p>Weather: ${data.weather[0].description}</p>`;
+        // clear global variables 
+            longitude = "";
+            latitude = "";
     })
     .catch(error => {
         console.error('Error fetching weather data:', error);
