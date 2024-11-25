@@ -1,0 +1,73 @@
+:root{
+    --color1:rgb(25, 30, 35);
+    --color2: rgb(194, 208, 224);
+    --liHeight:2rem;
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* ------ nav ------ */
+nav{
+    display: flex;
+    flex-direction: row;
+    background-color:var(--color2);
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color1);
+    font-size: larger;
+}
+nav h1{
+    padding: 0 1rem;
+}
+nav ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 0.5rem;
+}
+li{
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+    height: var(--liHeight);
+}
+nav a{
+    text-decoration: none;
+    color: var(--color1);
+}
+#conditionInput{
+    width: 20vw;
+    height: 90%;
+}
+#btnSearch{
+    width: 5rem;
+    height: 90%;
+    background-color: var(--color1);
+    color: var(--color2);
+    border: none;
+}
+/* ------ Body ------ */
+.container{
+    width: 95vw;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+.analysisForm{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    
+}
+.analysisForm .label1{
+    display: inline-block;
+    width: 5rem;
+}
+.analysisForm div{
+margin: 0 0 0.1rem 0;
+}
