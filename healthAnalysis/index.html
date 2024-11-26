@@ -18,38 +18,60 @@
         </ul>
     </nav>
     <div class="container">
-        <div class="analysisForm">
-            <h1>Healthcare Data Analysis</h1>
-            <div>
-                <label for="name" class="label1">Name:</label>
-                <input type="text" id="name">
+        <h1>Healthcare Data Analysis</h1>
+        <div class="container2">
+            <div class="analysisForm">
+                <div>
+                    <label for="name" class="label1">Name:</label>
+                    <input type="text" id="name">
+                </div>
+                <div>
+                    <label class="label1">Gender:</label>
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender" id="male" value="Male">
+                    <label for="female">Female</label>
+                    <input type="radio" name="gender" id="female"
+                        value="Female">
+                </div>
+                <div>
+                    <label for="age" class="label1">Age:</label>
+                    <input type="number" id="age">
+                </div>
+                <div>
+                    <label for="condition" class="label1">Condition:</label>
+                    <select id="condition">
+                        <option value="" disabled selected hidden>Select
+                            condition
+                        </option>
+                        <option value="Diabetes">Diabetes</option>
+                        <option value="Thyroid">Thyroid</option>
+                        <option value="High Blood Pressure">High Blood Pressure
+                        </option>
+                    </select>
+                </div>
+                <button id="addPatient">Add Patient</button>
             </div>
-            <div>
-                <label class="label1">Gender:</label>
-                <label for="male">Male</label>
-                <input type="radio" name="gender" id="male" value="Male">
-                <label for="female">Female</label>
-                <input type="radio" name="gender" id="female" value="Female">
+            <div class="searchSymptoms">
+                <h2>Search by symptoms</h2>
+                <div id="symptomslists">
+                    <select name="symptom1" id="symptom1">
+                        <option value="" disabled hidden selected>Select symptom
+                        </option>
+                    </select>
+                    <select name="symptom2" id="symptom2">
+                        <option value="" disabled hidden selected>Select symptom
+                        </option>
+                    </select>
+                    <select name="symptom3" id="symptom3">
+                        <option value="" disabled hidden selected>Select symptom
+                        </option>
+                    </select>
+                </div>
+                <button id="symptomsSearch">Search</button>
             </div>
-            <div>
-                <label for="age" class="label1">Age:</label>
-                <input type="number" id="age">
-            </div>
-            <div>
-                <label for="condition" class="label1">Condition:</label>
-                <select id="condition">
-                    <option value="" disabled selected hidden>Select condition
-                    </option>
-                    <option value="Diabetes">Diabetes</option>
-                    <option value="Thyroid">Thyroid</option>
-                    <option value="High Blood Pressure">High Blood Pressure
-                    </option>
-                </select>
-            </div>
-            <button id="addPatient">Add Patient</button>
-            <h2>Analysis Report</h2>
-            <div id="report"></div>
         </div>
+        <h2>Analysis Report</h2>
+        <div id="report"></div>
         <div class="searchCondition">
             <div id="result"></div>
         </div>

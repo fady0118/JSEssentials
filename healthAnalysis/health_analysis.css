@@ -64,16 +64,24 @@ nav a {
 /* ------ Body ------ */
 .container {
     width: 95vw;
+    height: auto;
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0);
+}
+
+.container2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 95vw;
 }
 
 .analysisForm {
     display: flex;
     flex-direction: column;
     align-items: baseline;
-
+    width: 50%;
 }
 
 .analysisForm .label1 {
@@ -83,4 +91,16 @@ nav a {
 
 .analysisForm div {
     margin: 0 0 0.1rem 0;
+}
+
+.searchSymptoms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 45%;
+}
+
+.searchSymptoms h2 {
+    margin: 0;
 }
