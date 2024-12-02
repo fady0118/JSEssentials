@@ -23,11 +23,12 @@
             <li class="listItem"><a href="ContactUs.html">Contact Us</a></li>
         </ul>
         <div class="searchbar">
-            <input type="text" name="search" id="search" placeholder="Enter a destination or a keyword">
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" name="search" id="search" placeholder="Enter a destination or a keyword" minlength="3">
+            
             <div class="searchButtons">
-                <button>Search</button>
-                <button>Clear</button>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <button id="searchbtn">Search</button>
+                <button id="clearbtn">Clear</button>
             </div>
             
         </div>
@@ -40,6 +41,7 @@
         <i class="fa-brands fa-youtube"></i>
     </aside>
     <main class="mainbody">
+        <div id="MainHome">
         <div class="HomeTitle">EXPOLRE DREAM DESTINATION</div>
         <div class="hometext">
             It encourages exploration of unfamiliar
@@ -49,6 +51,11 @@
             ignites a sense of wonder
         </div>
         <div id="BookButton">BOOK NOW</div>
+        </div>
+        <div id="Recommendations">
+            <!-- recommendation cards are generated in the javascript code -->
+        </div>
+        
     </main>
 <script src="travel_recommendation.js"></script>
 </body>

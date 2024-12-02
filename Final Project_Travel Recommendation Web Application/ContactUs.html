@@ -32,19 +32,22 @@
         <i class="fa-brands fa-youtube"></i>
     </aside>
     <main class="Contactmain">
-        <div id="ContactTitle">
-            <div>CONTACT US</div>
-            <p>Get In Touch</p>
+            <div class="contactBase">
+            <div id="ContactTitle">
+                <div>CONTACT US</div>
+                <p>Get In Touch</p>
+            </div>
+            <form id="contactForm">
+                <label for="name" class="formlabel">Name</label>
+                <input type="text" name="name" id="name" class="forminput">
+                <label for="email" class="formlabel">Email</label>
+                <input type="email" name="email" id="email" class="forminput">
+                <label for="message" class="formlabel">Message</label>
+                <textarea id="message" class="forminput"></textarea>
+                <button type="submit" id="submit">Submit</button>
+            </form>    
         </div>
-        <form id="ContactForm" action="post">
-            <label for="name" class="formlabel">Name</label>
-            <input type="text" name="name" id="name" class="forminput">
-            <label for="email" class="formlabel">Email</label>
-            <input type="email" name="email" id="email" class="forminput">
-            <label for="message" class="formlabel">Message</label>
-            <textarea id="message" class="forminput"></textarea>
-            <input type="submit" value="Submit" id="submit">
-        </form>
+        <div id="displaydata"></div>    
     </main>
 <script src="travel_recommendation.js"></script>
 </body>

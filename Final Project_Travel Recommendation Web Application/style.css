@@ -1,45 +1,53 @@
-:root{
-    --var-iconsize:30px;
-    --var-fontsize-1:18px;
-    --var-fontsize-2:16px;
-    --var-fontsize-3:14px;
-    --var-fontsize-4:10px;
-    --var-color-1:aliceblue;
-    --var-color-2:rgb(135, 179, 255);
+:root {
+    --var-iconsize: 30px;
+    --var-fontsize-1: 18px;
+    --var-fontsize-2: 16px;
+    --var-fontsize-3: 14px;
+    --var-fontsize-4: 10px;
+    --var-color-1: aliceblue;
+    --var-color-2: rgb(135, 179, 255);
 }
-html,body{
-    margin: 0; 
+
+html,
+body {
+    margin: 0;
     padding: 0;
     font-family: Helvetica, Arial, sans-serif;
     scroll-behavior: smooth;
 }
-*{
-    box-sizing: border-box; 
+
+* {
+    box-sizing: border-box;
 }
-body{
+
+body {
     background-image: url(pexels-louis-phdc-153256-691541.jpg);
-    background-size: cover;
+    background-size: 200vw;
     color: var(--var-color-1);
 }
+
 /* navbar */
-nav{
+nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 0 1.5rem;
-    background-image: linear-gradient(90deg,#101f3c,#43557a);
+    background-image: linear-gradient(90deg, #101f3c, #43557a);
     opacity: 0.75;
 }
-.Logo{
+
+.Logo {
     width: 25%;
 }
-#headline{
+
+#headline {
     font-family: "Roboto", serif;
     font-weight: 700;
     font-style: italic;
 }
-.list{
+
+.list {
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -48,18 +56,22 @@ nav{
     font-size: var(--var-fontsize-1);
     width: 25%;
 }
-li{
+
+li {
     padding: 0;
 }
-li a{
+
+li a {
     text-decoration: none;
     color: var(--var-color-1);
 }
-li a:hover{
+
+li a:hover {
     color: var(--var-color-2);
     transition: color 0.5s ease-in-out;
 }
-.searchbar{
+
+.searchbar {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -69,11 +81,18 @@ li a:hover{
     width: 25%;
     height: 2rem;
 }
-.searchbar input{
+
+.searchbar input {
     border: none;
     outline: none;
 }
-.searchbar div button{
+
+.searchButtons{
+    display: flex;
+    align-items: center;
+}
+
+.searchbar div button {
     margin-left: 0.5rem;
     background-color: #43557a;
     border-radius: 0.5rem;
@@ -83,12 +102,16 @@ li a:hover{
     font-size: var(--var-fontsize-4);
     color: var(--var-color-1);
 }
-.searchbar div button:hover{
+
+.searchbar div button:hover {
     cursor: pointer;
     background-color: #506a9f;
     transition: 0.3s ease-in-out;
 }
-.sidepanel{
+.searchbar div i{
+    color: #43557a;
+}
+.sidepanel {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -100,23 +123,39 @@ li a:hover{
     height: calc(100vh - 100px);
     padding: 0rem 1rem 2rem 1rem;
 }
-.sidepanel i{
+
+.sidepanel i {
     font-size: var(--var-iconsize);
     margin-top: 2rem;
 }
+
 .sidepanel .vl {
     border-left: 2.5px solid white;
     height: 250px;
     margin-bottom: 3rem;
 }
-.mainbody{
+
+.mainbody {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     position: absolute;
     left: 170px;
     top: 150px;
     width: calc(100% - 190px);
-    height: calc(100% - 190px);
+    height: auto;
 }
-#BookButton{
+.Aboutmain{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    left: 170px;
+    top: 150px;
+    width: calc(100% - 190px);
+    height: auto;
+}
+#BookButton {
     background-color: #659bff66;
     border-radius: 0.25rem;
     border: none;
@@ -125,36 +164,46 @@ li a:hover{
     font-size: var(--var-fontsize-2);
     font-weight: 500;
     margin-top: 1rem;
-}
-#BookButton:hover{
-    cursor: pointer;
-    background-color: #659bffb4;
-    transition: 0.3s ease-in-out;
+    transition: 0.4s ease-in-out;
 }
 
-main div{  
+#BookButton:hover {
+    cursor: pointer;
+    background-color: #6fa2ffce;
+    
+}
+
+main div {
     font-family: Arial, Helvetica, sans-serif;
 }
-main .HomeTitle{
+#MainHome{
+    display: inline-block;
+    width: fit-content;
+
+}
+main .HomeTitle {
     font-size: 75px;
     display: inline-block;
     font-weight: 700;
     width: 450px;
 }
-main .AboutTitle{
+
+main .AboutTitle {
     font-size: 75px;
     display: inline-block;
     font-weight: 700;
     width: 450px;
     margin-top: 0.5rem;
 }
-main .hometext{
+
+main .hometext {
     font-size: var(--var-fontsize-2);
     padding: 0.25rem;
     width: 350px;
-    
+
 }
-main .abouttext{
+
+main .abouttext {
     background-color: #050d1d60;
     border-radius: 0.5rem;
     font-size: var(--var-fontsize-2);
@@ -163,8 +212,81 @@ main .abouttext{
     margin-top: 1.5rem;
     line-height: 1.3rem;
 }
+#Recommendations {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    /* background-color: #506a9f; */
+    margin-right:4rem;    
+    padding: 0 1rem;
+}
+.recommendationCard{
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+    height:425px;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+    background-color: aliceblue;
+    color: black;
+    overflow: hidden;
+    /* box-shadow: 10px 10px 25px rgba(26, 26, 26, 0.516); */
+    box-shadow: 0 0 20px 5px rgba(29, 28, 30, 0.405);
+}
+.recommendationCard .imgcontainer{
+    height: 65%;
+    width: auto; 
+    padding: 0;
+    overflow: hidden;
+}
+.recommendationCard img{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+}
+.recommendationCard img:hover{
+    transform: scale(1.15);
+}
+.recommendationCard>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 35%;
+    width: 100%;
+    padding: 1rem;
+}
+.recommendationCard .cardTitle{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
 
-.team{
+}
+.recommendationCard .cardDesc{
+    font-family: "Roboto", serif;
+    font-size: var(--var-fontsize-2);
+    font-weight: 300;
+    color: rgb(85, 85, 85);
+    margin-bottom: 0.5rem;
+}
+.recommendationCard .cardVisit{
+    font-size: var(--var-fontsize-3);
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+    padding: 0.35rem 1.25rem;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: #43557a;
+    color: var(--var-color-1);
+    transition: 0.3s ease-in-out;
+}
+.recommendationCard .cardVisit:hover{
+    cursor: pointer;
+    background-color: #4a68a5;
+}
+.team {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -173,13 +295,15 @@ main .abouttext{
     width: 100%;
     height: 200px;
 }
-.TeamTitle{
+
+.TeamTitle {
     display: inline-block;
     font-size: 75px;
     font-weight: 700;
     width: 25%;
     margin-left: 1rem;
 }
+
 #teamContainer {
     display: flex;
     flex-direction: row;
@@ -188,41 +312,48 @@ main .abouttext{
     height: 100%;
     align-items: center;
 }
-.teamMember{
+
+.teamMember {
     display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        background-color: #050d1d60;
-        border-radius: 0.5rem;
-        width: 30%;
-        height: 80%;
-        align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: #050d1d60;
+    border-radius: 0.5rem;
+    width: 30%;
+    height: 80%;
+    align-items: center;
 }
-.teamMember i{
+
+.teamMember i {
     position: relative;
     top: -3rem;
     font-size: 22px;
 }
-.Member{
+
+.Member {
     display: flex;
     flex-direction: column;
     width: 75%;
 }
-.Member p{
+
+.Member p {
     margin: 0.15rem 0;
     font-weight: 100;
 }
-.MemberName{
+
+.MemberName {
     font-size: var(--var-fontsize-1);
     font-weight: 500;
 }
-.MemberDescription{
+
+.MemberDescription {
     font-size: var(--var-fontsize-2);
     font-family: "Roboto", serif;
     font-weight: 200;
     font-style: normal;
 }
-.MemberRole{
+
+.MemberRole {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -235,33 +366,42 @@ main .abouttext{
     font-weight: 900;
     transition: all 0.3s ease-in-out;
 }
-.Contactmain{
+
+.Contactmain {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
     position: absolute;
     left: 170px;
-    top: 200px;
+    top: 170px;
     width: 1200px;
-    height: 560px;
+}
+.contactBase{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%; 
 }
 #ContactTitle {
     display: flex;
     flex-direction: column;
     width: 460px;
 }
-#ContactTitle div{
+
+#ContactTitle div {
     display: inline-block;
     font-size: 70px;
     font-weight: 700;
 }
-#ContactTitle p{
+
+#ContactTitle p {
     font-size: var(--var-fontsize-1);
     font-weight: 300;
     margin: 0.2rem;
 }
-#ContactForm{
+
+#contactForm {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -272,12 +412,14 @@ main .abouttext{
     background-color: #050d1d60;
     border-radius: 0.5rem;
 }
-.formlabel{
+
+.formlabel {
     padding: 0.25rem 0;
     margin-bottom: 0.25rem;
     font-size: var(--var-fontsize-2);
 }
-.forminput{
+
+.forminput {
     background: none;
     border: 1px solid rgba(240, 248, 255, 0.41);
     color: var(--var-color-1);
@@ -287,10 +429,12 @@ main .abouttext{
     font-size: var(--var-fontsize-3);
     margin-bottom: 1rem;
 }
-#message{
+
+#message {
     height: 150px;
 }
-#submit{
+
+#submit {
     background: none;
     border: 1px solid rgba(240, 248, 255, 0.41);
     color: var(--var-color-1);
@@ -302,14 +446,51 @@ main .abouttext{
     margin-top: 0.5rem;
     transition: 0.3s ease-in-out;
 }
-#submit:hover{
+
+#submit:hover {
     cursor: pointer;
     background-color: #43557a66;
 }
 
+#displaydata {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    width: 80vw;
+    height: auto;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+.dataItem{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: 0 1rem 1rem;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    background-color: #050d1d60;
+    padding: 0.25rem 0.5rem;
+}
 
+.userName{
+    margin-bottom: 0.25rem;
+    font-size: var(--var-fontsize-2);
+    font-weight: 500;
+}
 
+.userEmail{
+    margin-bottom: 0.25rem;
+    font-size: var(--var-fontsize-4);
+    font-weight: 200;
+}
 
+.userMessage{
+    font-size: var(--var-fontsize-3);
+    font-weight: 350;
+    border: 1px solid rgba(240, 248, 255, 0.41);
+    border-radius: 0.25rem;
+    padding: 0.25rem;
+}
 
 
 /* Fonts */
@@ -317,72 +498,70 @@ main .abouttext{
     font-family: "Roboto", serif;
     font-weight: 100;
     font-style: normal;
-  }
-  
-  .roboto-light {
+}
+
+.roboto-light {
     font-family: "Roboto", serif;
     font-weight: 300;
     font-style: normal;
-  }
-  
-  .roboto-regular {
+}
+
+.roboto-regular {
     font-family: "Roboto", serif;
     font-weight: 400;
     font-style: normal;
-  }
-  
-  .roboto-medium {
+}
+
+.roboto-medium {
     font-family: "Roboto", serif;
     font-weight: 500;
     font-style: normal;
-  }
-  
-  .roboto-bold {
+}
+
+.roboto-bold {
     font-family: "Roboto", serif;
     font-weight: 700;
     font-style: normal;
-  }
-  
-  .roboto-black {
+}
+
+.roboto-black {
     font-family: "Roboto", serif;
     font-weight: 900;
     font-style: normal;
-  }
-  
-  .roboto-thin-italic {
+}
+
+.roboto-thin-italic {
     font-family: "Roboto", serif;
     font-weight: 100;
     font-style: italic;
-  }
-  
-  .roboto-light-italic {
+}
+
+.roboto-light-italic {
     font-family: "Roboto", serif;
     font-weight: 300;
     font-style: italic;
-  }
-  
-  .roboto-regular-italic {
+}
+
+.roboto-regular-italic {
     font-family: "Roboto", serif;
     font-weight: 400;
     font-style: italic;
-  }
-  
-  .roboto-medium-italic {
+}
+
+.roboto-medium-italic {
     font-family: "Roboto", serif;
     font-weight: 500;
     font-style: italic;
-  }
-  
-  .roboto-bold-italic {
+}
+
+.roboto-bold-italic {
     font-family: "Roboto", serif;
     font-weight: 700;
     font-style: italic;
-  }
-  
-  .roboto-black-italic {
+}
+
+.roboto-black-italic {
     font-family: "Roboto", serif;
     font-weight: 900;
     font-style: italic;
-  }
-
-  
+}
